@@ -1,0 +1,51 @@
+/*************************************************************** 
+** File Name: player-add-style.css
+** Author: Mathew Kagel 
+** E-mail: kagelm@oregonstate.edu
+** Course: CS340-400
+** Description: This is CSS code to style all layouts for the 
+**   sc2game tracker project. 
+***************************************************************/   
+#spacer {
+	height: 30px;
+}
+
+fieldset {
+	border: 0px solid;
+}
+
+table {
+	border-collapse: collapse; 
+	border: solid;
+	border-width: 5px;
+	border-color: #003300;
+	position: relative;
+	top: 15px;
+	clear: both;
+}
+
+td, th { 
+	text-align: center;
+	min-width: 125px; 
+}
+
+th {
+	border: solid;
+	border-color: #5F5F5F;
+}
+
+td {
+	border: groove;
+	border-bottom: groove #5F5F5F;
+}
+
+h2 {
+	position: relative;
+	top: 15px;
+}
+
+h3 {
+	color: blue;
+	position: relative;
+	top: 15px;
+}

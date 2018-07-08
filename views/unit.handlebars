@@ -1,0 +1,60 @@
+<h1>StarCraft 2 Game Tracker</h1>
+<button type="button" id="game-button">Games</button>
+<button type="button" id="map-button">Maps</button>
+<button type="button" id="player-button">Players</button>
+<button type="button" id="building-button">Buildings</button>
+<button type="button" id="unit-button">Units</button>
+<h2>Unit List</h2>
+<div id="outer">
+	<div id="inner">Selection Criteria ---></div>
+	<div id="inner">
+		<select id="unit-select-by">
+			<option value="None">None</option>
+			<option value="Race">Race</option>
+		</select>
+	</div>
+	<div id="inner">Value to Select By --></div>
+	<div id="inner">
+		<select id="unit-select-value-by">
+		</select>
+	</div>
+</div>
+<br>
+<div id="outer">
+	<div id="inner">Sort By ---------------></div>
+	<div id="inner">
+		<select id="unit-sort-by">
+			<option value="None">None</option>
+			<option value="Unit Name">Unit Name</option>
+			<option value="Race">Race</option>
+			<option value="All">All</option>
+		</select>
+	</div>
+</div>
+<table>
+	<thead>
+		<th>Unit Name</th>
+		<th>Race</th>
+		<th>Mineral Cost</th>
+		<th>Vespene Cost</th>
+		<th>Build Time</th>
+		<th>Life</th>
+		<th>Shields</th>
+		<th>Armor</th>
+	</thead>
+	<tbody>
+		{{#each results}}
+		<tr>
+			<td>{{unit_name}}</td>		
+			<td>{{race}}</td>		
+			<td>{{mineral_cost}}</td>
+			<td>{{vespene_cost}}</td>		
+			<td>{{build_time}}</td>		
+			<td>{{life}}</td>	
+			<td>{{shields}}</td>		
+			<td>{{armor}}</td>		
+		</tr>
+		{{/each}}
+	</tbody>
+</table>		
+				

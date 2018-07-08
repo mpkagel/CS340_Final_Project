@@ -1,0 +1,33 @@
+<h1>StarCraft 2 Game Tracker</h1>
+<button type="button" id="game-button">Games</button>
+<button type="button" id="map-button">Maps</button>
+<button type="button" id="player-button">Players</button>
+<button type="button" id="building-button">Buildings</button>
+<button type="button" id="unit-button">Units</button>
+{{#if warningSql}}
+	<h3 id="warningSql">SQL Error: {{warningSql}}</h3>
+{{/if}}
+<h2>Player List (Update)</h2>
+<form method="post" action="/players">
+	<fieldset>
+		<table>
+			<thead>
+				<th>Player Name</th>
+				<th># Wins</th>
+				<th># Losses</th>
+			</thead>
+			<tbody>
+				{{#each results}}
+				<tr>
+					<td><input type="text" name="name" id="newName" value="{{player_name}}"></td>		
+					<td><input type="text" name="wins" id="newWins" value={{wins}}></td>		
+					<td><input type="text" name="losses" id="newLosses" value={{losses}}></td>		
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+		<div id="spacer"></div>
+		<input type="submit" name="Edit Request" value="Update Player" id="EditButton">
+	</fieldset>
+</form>
+				

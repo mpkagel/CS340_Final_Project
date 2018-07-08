@@ -1,0 +1,110 @@
+<h1>StarCraft 2 Game Tracker</h1>
+<button type="button" id="game-button">Games</button>
+<button type="button" id="map-button">Maps</button>
+<button type="button" id="player-button">Players</button>
+<button type="button" id="building-button">Buildings</button>
+<button type="button" id="unit-button">Units</button>
+<button type="button" id="Back">Back to {{results}} Player List</button>
+<h2>{{results}} Players' Building & Unit List</h2>
+<table id="game">
+	<thead>
+		<th>Game Name</th>
+		<th>Game Type</th>
+		<th>Game Time</th>
+		<th>Date Played</th>
+		<th>Map Name</th>
+	</thead>
+	<tbody>
+		{{#each game}}
+		<tr>
+			<td>{{game_name}}</td>		
+			<td>{{game_type}}</td>		
+			<td>{{game_time}}</td>		
+			<td>{{date_played}}</td>		
+			<td>{{map_name}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+<table id="player">		
+	<thead>
+		<th>Game Name</th>
+		<th>Player Name</th>
+		<th>Won/Lost</th>
+		<th>Race</th>
+		<th>Team</th>
+	</thead>
+	<tbody>
+		{{#each player}}
+		<tr>
+			<td>{{game_name}}</td>		
+			<td>{{player_name}}</td>		
+			<td>{{outcome}}</td>		
+			<td>{{race}}</td>
+			<td>{{team}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+<table id="bldunit">
+	<thead>
+		<th>Building List</th>
+		<th>Unit List</th>
+		<th></th>
+	</thead>
+	<tbody>
+		{{#each player}}
+		<tr>
+			<td>
+				<table id="bld-subtable">
+					<thead>
+						<th>Game Name</th>
+						<th>Player Name</th>
+						<th>Race</th>
+						<th>Building Name</th>
+						<th>Quantity</th>
+					</thead>
+					<tbody>
+						{{#each building}}
+						<tr>
+							<td>{{game_name}}</td>
+							<td>{{player_name}}</td>
+							<td>{{race}}</td>
+							<td>{{bld_name}}</td>
+							<td>{{quantity}}</td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</td>
+			<td>
+				<table id="unit-subtable">
+					<thead>
+						<th>Game Name</th>
+						<th>Player Name</th>
+						<th>Race</th>
+						<th>Unit Name</th>
+						<th>Quantity</th>
+					</thead>
+					<tbody>
+						{{#each unit}}
+						<tr>
+							<td>{{game_name}}</td>
+							<td>{{player_name}}</td>
+							<td>{{race}}</td>
+							<td>{{unit_name}}</td>
+							<td>{{quantity}}</td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</td>
+			<td>
+				<button type="button" id="ChangeButtonBld{{player_id}}">Change {{player_name}}'s Building List</button>
+				<div id="spacer"></div>
+				<button type="button" id="ChangeButtonUnit{{player_id}}">Change {{player_name}}'s Unit List</button>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

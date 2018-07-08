@@ -1,0 +1,73 @@
+<h1>StarCraft 2 Game Tracker</h1>
+<button type="button" id="game-button">Games</button>
+<button type="button" id="map-button">Maps</button>
+<button type="button" id="player-button">Players</button>
+<button type="button" id="building-button">Buildings</button>
+<button type="button" id="unit-button">Units</button>
+{{#if warning}}
+	<h3 id="warning">{{warning}} is assigned to certain games and cannot change its map type!</h3>
+{{/if}}
+<h2>
+<h2>Map List</h2>
+<div id="spacer"></div>
+	<button type="button" id="add">Add New Map</button>
+<div id="spacer"></div>
+<div id="outer">
+	<div id="inner">Selection Criteria ---></div>
+	<div id="inner">
+		<select id="map-select-by">
+			<option value="None">None</option>
+			<option value="Map Name">Map Name</option>
+			<option value="Map Type">Map Type</option>
+		</select>
+	</div>
+	<div id="inner">Value to Select By --></div>
+	<div id="inner">
+		<select id="map-select-value-by">
+		</select>
+	</div>
+</div>
+<br>
+<div id="outer">
+	<div id="inner">Sort By ---------------></div>
+	<div id="inner">
+		<select id="map-sort-by">
+			<option value="None">None</option>
+			<option value="Map Name">Map Name</option>
+			<option value="Map Type">Map Type</option>
+			<option value="All">All</option>
+		</select>
+	</div>
+</div>
+<table>
+	<thead>
+		<th>Map Name</th>
+		<th>Map Type</th>
+		<th>Horizontal Length</th>
+		<th>Vertical Length</th>
+		<th>Designer</th>
+		<th>Tile Set</th>
+		<th></th>
+		<th></th>
+	</thead>
+	<tbody>
+		{{#each results}}
+		<tr>
+			<td>{{map_name}}</td>		
+			<td>{{map_type}}</td>		
+			<td>{{horizontal_length}}</td>		
+			<td>{{vertical_length}}</td>		
+			<td>{{designer}}</td>
+			<td>{{tile_set}}</td>
+			<td>
+				<button type="button" id="upd{{map_id}}">Update {{map_name}}</button>
+			</td>
+			<td>
+				<button type="button" id="del{{map_id}}">Delete</button>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+
+				

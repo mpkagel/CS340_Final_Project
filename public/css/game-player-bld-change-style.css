@@ -1,0 +1,82 @@
+/*************************************************************** 
+** File Name: game-player-bld-change-style.css
+** Author: Mathew Kagel 
+** E-mail: kagelm@oregonstate.edu
+** Course: CS340-400
+** Description: This is CSS code to style all layouts for the 
+**   sc2game tracker project. 
+***************************************************************/   
+#game {
+	border-collapse: collapse; 
+	border: solid;
+	border-width: 5px;
+	border-color: #68739C;
+	position: relative;
+	top: 15px;
+}
+
+#player {
+	border-collapse: collapse; 
+	border: solid;
+	border-width: 5px;
+	border-color: #003300;
+	position: relative;
+	top: 40px;
+}
+
+#bldunit {
+	border-collapse: collapse; 
+	border: solid;
+	border-width: 5px;
+	border-color: #660066;
+	position: relative;
+	top: 66px;
+}
+
+#bld-subtable {
+	border-collapse: collapse; 
+	border: solid;
+	border-width: 5px;
+	border-color: #FF0066;
+}
+
+#unit-subtable {
+	border-collapse: collapse; 
+	border: solid;
+	border-width: 5px;
+	border-color: #CC2700;
+}
+
+.inputText {
+	text-align: center;
+	width: 75px;
+}
+
+#UpdateGPB {
+	position: relative;
+	top: 81px;
+}
+
+fieldset {
+	border: 0px solid;
+}
+
+td, th { 
+	text-align: center;
+	min-width: 70px; 
+}
+
+th {
+	border: solid;
+	border-color: #5F5F5F;
+}
+
+td {
+	border: groove;
+	border-bottom: groove #5F5F5F;
+}
+
+h2 {
+	position: relative;
+	top: 15px;
+}

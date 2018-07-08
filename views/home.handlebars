@@ -1,0 +1,75 @@
+<h1>StarCraft 2 Game Tracker</h1>
+<button type="button" id="game-button">Games</button>
+<button type="button" id="map-button">Maps</button>
+<button type="button" id="player-button">Players</button>
+<button type="button" id="building-button">Buildings</button>
+<button type="button" id="unit-button">Units</button>
+{{#if warning}}
+	<h3 id="warning">{{warning}}</h3>
+{{/if}}
+<h2>Game List</h2>
+<div id="spacer"></div>
+	<button type="button" id="add">Add New Game</button>
+<div id="spacer"></div>
+<div id="outer">
+	<div id="inner">Selection Criteria ---></div>
+	<div id="inner">
+		<select id="game-select-by">
+			<option value="None">None</option>
+			<option value="Game Type">Game Type</option>
+			<option value="Map Name">Map Name</option>
+		</select>
+	</div>
+	<div id="inner">Value to Select By --></div>
+	<div id="inner">
+		<select id="game-select-value-by">
+		</select>
+	</div>
+</div>
+<br>
+<div id="outer">
+	<div id="inner">Sort By ---------------></div>
+	<div id="inner">
+		<select id="game-sort-by">
+			<option value="None">None</option>
+			<option value="Game Type">Game Type</option>
+			<option value="Map Name">Map Name</option>
+			<option value="All">All</option>
+		</select>
+	</div>
+</div>
+<table>
+	<thead>
+		<th>Game Name</th>
+		<th>Game Type</th>
+		<th>Game Time</th>
+		<th>Date Played</th>
+		<th>Map Name</th>
+		<th>Players In Game</th>
+		<th>Player Count?</th>
+		<th></th>
+		<th></th>
+	</thead>
+	<tbody>
+		{{#each results}}
+		<tr>
+			<td>{{game_name}}</td>		
+			<td>{{game_type}}</td>		
+			<td>{{game_time}}</td>		
+			<td>{{date_played}}</td>		
+			<td>{{map_name}}</td>
+			<td>
+				<button type="button" id="list{{game_id}}">{{game_name}} Player List</button>
+			</td>
+			<td id="p_count{{game_id}}"></td>
+			<td>
+				<button type="button" id="upd{{game_id}}">Update {{game_name}}</button>
+			</td>
+			<td>
+				<button type="button" id="del{{game_id}}">Delete</button>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+				

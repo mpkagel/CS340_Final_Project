@@ -1,0 +1,85 @@
+<h1>StarCraft 2 Game Tracker</h1>
+<button type="button" id="game-button">Games</button>
+<button type="button" id="map-button">Maps</button>
+<button type="button" id="player-button">Players</button>
+<button type="button" id="building-button">Buildings</button>
+<button type="button" id="unit-button">Units</button>
+<button type="button" id="Back">Back to {{game_name}} Players' Building & Unit List</button>
+<h2>{{game_name}} {{player_name}}'s Unit List (Edit)</h2>
+<table id="game">
+	<thead>
+		<th>Game Name</th>
+		<th>Game Type</th>
+		<th>Game Time</th>
+		<th>Date Played</th>
+		<th>Map Name</th>
+	</thead>
+	<tbody>
+		{{#each game}}
+		<tr>
+			<td>{{game_name}}</td>		
+			<td>{{game_type}}</td>		
+			<td>{{game_time}}</td>		
+			<td>{{date_played}}</td>		
+			<td>{{map_name}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+<table id="player">		
+	<thead>
+		<th>Game Name</th>
+		<th>Player Name</th>
+		<th>Won/Lost</th>
+		<th>Race</th>
+		<th>Team</th>
+	</thead>
+	<tbody>
+		{{#each player}}
+		<tr>
+			<td>{{game_name}}</td>		
+			<td>{{player_name}}</td>		
+			<td>{{outcome}}</td>		
+			<td>{{race}}</td>
+			<td>{{team}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+<form method="post" action="/game-player-bldunit">
+	<fieldset>
+		<table id="bldunit">
+			<thead>
+				<th>Unit List</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<table id="unit-subtable">
+							<thead>
+								<th>Game Name</th>
+								<th>Player Name</th>
+								<th>Race</th>
+								<th>Unit Name</th>
+								<th>Quantity</th>
+							</thead>
+							<tbody>
+								{{#each unit}}
+								<tr>
+									<td>{{game_name}}</td>
+									<td>{{player_name}}</td>
+									<td>{{race}}</td>
+									<td>{{unit_name}}</td>
+									<td><input class="inputText" type="number" name="quantity" id="newQuantity{{unit_id}}">
+									</td>
+								</tr>
+								{{/each}}
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<input type="submit" name="Edit Unit" value="Update Unit Quantities" id="UpdateGPU">
+	</fieldset>
+</form>

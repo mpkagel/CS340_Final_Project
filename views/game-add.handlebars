@@ -1,0 +1,45 @@
+<h1>StarCraft 2 Game Tracker</h1>
+<button type="button" id="game-button">Games</button>
+<button type="button" id="map-button">Maps</button>
+<button type="button" id="player-button">Players</button>
+<button type="button" id="building-button">Buildings</button>
+<button type="button" id="unit-button">Units</button>
+{{#if warningSql}}
+	<h3 id="warningSql">SQL Error: {{warningSql}}</h3>
+{{/if}}
+<h2>Game List (Add)</h2>
+<form method="post" action="/">
+	<fieldset>
+		<table>
+			<thead>
+				<th>Game Name</th>
+				<th>Game Type</th>
+				<th>Game Time</th>
+				<th>Date Played</th>
+				<th>Map Name</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="text" name="name" id="newName"></td>		
+					<td>
+						<select id="newType" name="type">
+							<option value="1v1">1v1</option>
+							<option value="2v2">2v2</option>
+							<option value="3v3">3v3</option>
+							<option value="4v4">4v4</option>
+						</select>
+					</td>		
+					<td><input type="text" name="time" id="newTime"></td>		
+					<td><input type="text" name="date" id="newDate"></td>		
+					<td>
+						<select id="newMap" name="map">
+							<option value="None">None</option>
+						</select></td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="spacer"></div>
+		<input type="submit" name="Add Item" value="Add Game" id="AddButton">
+	</fieldset>
+</form>
+				

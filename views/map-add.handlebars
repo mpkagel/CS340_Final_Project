@@ -1,0 +1,44 @@
+<h1>StarCraft 2 Game Tracker</h1>
+<button type="button" id="game-button">Games</button>
+<button type="button" id="map-button">Maps</button>
+<button type="button" id="player-button">Players</button>
+<button type="button" id="building-button">Buildings</button>
+<button type="button" id="unit-button">Units</button>
+{{#if warningSql}}
+	<h3 id="warningSql">SQL Error: {{warningSql}}</h3>
+{{/if}}
+<h2>Map List (Add)</h2>
+<form method="post" action="/maps">
+	<fieldset>
+		<table>
+			<thead>
+				<th>Map Name</th>
+				<th>Map Type</th>
+				<th>Horizontal Length</th>
+				<th>Vertical Length</th>
+				<th>Designer</th>
+				<th>Tile Set</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="text" name="name" id="newName"></td>		
+					<td>
+						<select id="newType" name="type">
+							<option value="1v1">1v1</option>
+							<option value="2v2">2v2</option>
+							<option value="3v3">3v3</option>
+							<option value="4v4">4v4</option>
+						</select>
+					</td>		
+					<td><input type="text" name="horizontal" id="newHorizontal"></td>		
+					<td><input type="text" name="vertical" id="newVertical"></td>		
+					<td><input type="text" name="designer" id="newDesigner"></td>
+					<td><input type="text" name="tile_set" id="newTileSet"></td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="spacer"></div>
+		<input type="submit" name="Add Item" value="Add Map" id="AddButton">
+	</fieldset>
+</form>
+				

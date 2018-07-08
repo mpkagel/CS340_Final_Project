@@ -1,0 +1,47 @@
+<h1>StarCraft 2 Game Tracker</h1>
+<button type="button" id="game-button">Games</button>
+<button type="button" id="map-button">Maps</button>
+<button type="button" id="player-button">Players</button>
+<button type="button" id="building-button">Buildings</button>
+<button type="button" id="unit-button">Units</button>
+<h2>{{results}} Games List</h2>
+<table id="player">		
+	<thead>
+		<th>Player Name</th>
+		<th># Wins</th>
+		<th>#Losses</th>
+	</thead>
+	<tbody>
+		{{#each player}}
+		<tr>
+			<td>{{player_name}}</td>		
+			<td>{{wins}}</td>		
+			<td>{{losses}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+<table id="game">
+	<thead>
+		<th>Game Name</th>
+		<th>Game Type</th>
+		<th>Game Time</th>
+		<th>Date Played</th>
+		<th>Map Name</th>
+		<th>Players In Game</th>
+	</thead>
+	<tbody>
+		{{#each games}}
+		<tr>
+			<td>{{game_name}}</td>		
+			<td>{{game_type}}</td>		
+			<td>{{game_time}}</td>		
+			<td>{{date_played}}</td>		
+			<td>{{map_name}}</td>
+			<td>
+				<button type="button" id="list{{game_id}}">{{game_name}} Player List</button>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

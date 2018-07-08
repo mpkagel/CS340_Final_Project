@@ -1,0 +1,61 @@
+<h1>StarCraft 2 Game Tracker</h1>
+<button type="button" id="game-button">Games</button>
+<button type="button" id="map-button">Maps</button>
+<button type="button" id="player-button">Players</button>
+<button type="button" id="building-button">Buildings</button>
+<button type="button" id="unit-button">Units</button>
+{{#if warning}}
+	<h3 id="warning">{{warning}}</h3>
+{{/if}}
+<h2>{{results}} Player List</h2>
+<div id="spacer"></div>
+	<button type="button" id="bldUnit">{{results}} Players' Building & Unit List</button>
+<div id="spacer"></div>
+<table id="game">
+	<thead>
+		<th>Game Name</th>
+		<th>Game Type</th>
+		<th>Game Time</th>
+		<th>Date Played</th>
+		<th>Map Name</th>
+	</thead>
+	<tbody>
+		{{#each game}}
+		<tr>
+			<td>{{game_name}}</td>		
+			<td>{{game_type}}</td>		
+			<td>{{game_time}}</td>		
+			<td>{{date_played}}</td>		
+			<td>{{map_name}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+<table id="player">		
+	<thead>
+		<th>Game Name</th>
+		<th>Player Name</th>
+		<th>Won/Lost</th>
+		<th>Race</th>
+		<th>Team</th>
+		<th></th>
+		<th></th>
+	</thead>
+	<tbody id="player-tbody">
+		{{#each player}}
+		<tr>
+			<td>{{game_name}}</td>		
+			<td>{{player_name}}</td>		
+			<td>{{outcome}}</td>		
+			<td>{{race}}</td>
+			<td>{{team}}</td>
+			<td>
+				<button type="button" id="upd{{player_id}}">Update {{player_name}}</button>
+			</td>
+			<td>
+				<button type="button" id="del{{player_id}}">Delete</button>
+			</td>		
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

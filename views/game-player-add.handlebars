@@ -1,0 +1,63 @@
+<h1>StarCraft 2 Game Tracker</h1>
+<button type="button" id="game-button">Games</button>
+<button type="button" id="map-button">Maps</button>
+<button type="button" id="player-button">Players</button>
+<button type="button" id="building-button">Buildings</button>
+<button type="button" id="unit-button">Units</button>
+<button type="button" id="Back">Back to {{results}} Player List</button>
+{{#if warningSql}}
+	<h3 id="warningSql">SQL Error: {{warningSql}}</h3>
+{{/if}}
+<h2>{{results}} Player List (Add)</h2>
+<table id="game">
+	<thead>
+		<th>Game Name</th>
+		<th>Game Type</th>
+		<th>Game Time</th>
+		<th>Date Played</th>
+		<th>Map Name</th>
+	</thead>
+	<tbody>
+		{{#each game}}
+		<tr>
+			<td>{{game_name}}</td>		
+			<td>{{game_type}}</td>		
+			<td>{{game_time}}</td>		
+			<td>{{date_played}}</td>		
+			<td>{{map_name}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+<form method="post" action="/game-player">
+	<fieldset>
+		<table id="player">		
+			<thead>
+				<th>Game Name</th>
+				<th>Player Name</th>
+				<th>Won/Lost</th>
+				<th>Race</th>
+				<th>Team</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{{results}}</td>		
+					<td>
+						<select id="newPlayer" name="player"></select>
+					</td>		
+					<td><input type="text" id="newOutcome" name="outcome"></td>		
+					<td>
+						<select id="newRace" name="race">
+							<option value="Protoss">Protoss</option>
+							<option value="Terran">Terran</option>
+							<option value="Zerg">Zerg</option>
+						</select>
+					</td>
+					<td><input type="text" id="newTeam" name="team"></td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="spacer"></div>
+		<input type="submit" name="Add Item" value="Add Player to {{results}}" id="AddButton">
+	</fieldset>
+</form>
